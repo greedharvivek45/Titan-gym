@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITANFIT | Elite Gym & Discipline Club</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        titan: {
+                            900: '#08070C',
+                            800: '#120E24',
+                            700: '#1C153B',
+                            600: '#2D2063',
+                            500: '#8B5CF6', // Neon Purple
+                            400: '#A855F7',
+                            300: '#C084FC',
+                            neon: '#D946EF'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Orbitron & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #08070C;
+            color: #F3F4F6;
+        }
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .neon-glow {
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.35);
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+        }
+        .glass-card {
+            background: rgba(18, 14, 36, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        .glass-card:hover {
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08070C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8B5CF6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-titan-900 text-gray-100 selection:bg-titan-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-titan-700 via-titan-600 to-titan-700 text-xs font-semibold py-2 px-4 text-center tracking-wider uppercase border-b border-titan-500/30">
+        <span class="text-titan-300 mr-2"><i class="fa-solid fa-bolt animate-pulse"></i> LIMITED SLOTS:</span> USE CODE <span class="text-white underline font-bold">TITAN20</span> FOR 20% OFF ALL MEMBERSHIPS
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-card border-b border-titan-500/20 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-titan-600 to-titan-500 flex items-center justify-center neon-glow">
+                    <i class="fa-solid fa-dumbbell text-white text-xl"></i>
+                </div>
+                <span class="brand-font text-2xl font-black tracking-widest text-white">TITAN<span class="text-titan-400">FIT</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm tracking-wide">
+                <a href="#home" class="text-gray-300 hover:text-titan-400 transition-colors">Home</a>
+                <a href="#plans" class="text-gray-300 hover:text-titan-400 transition-colors">Membership Plans</a>
+                <a href="#quotes" class="text-gray-300 hover:text-titan-400 transition-colors">Discipline Wall</a>
+                <a href="#trainers" class="text-gray-300 hover:text-titan-400 transition-colors">Elite Trainers</a>
+                <a href="#contact" class="text-gray-300 hover:text-titan-400 transition-colors">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#plans" class="px-5 py-2.5 rounded-lg bg-titan-500 hover:bg-titan-400 text-white font-bold text-sm tracking-wider uppercase transition-all neon-glow transform hover:-translate-y-0.5">
+                    Join Now
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none text-2xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-titan-500/20 px-6 py-5 space-y-4">
+            <a href="#home" class="block text-gray-300 hover:text-titan-400 font-medium">Home</a>
+            <a href="#plans" class="block text-gray-300 hover:text-titan-400 font-medium">Membership Plans</a>
+            <a href="#quotes" class="block text-gray-300 hover:text-titan-400 font-medium">Discipline Wall</a>
+            <a href="#trainers" class="block text-gray-300 hover:text-titan-400 font-medium">Elite Trainers</a>
+            <a href="#contact" class="block text-gray-300 hover:text-titan-400 font-medium">Contact</a>
+            <a href="#plans" class="block text-center w-full py-3 rounded-lg bg-titan-500 text-white font-bold uppercase tracking-wider">Join Now</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-4 py-20 bg-gradient-to-b from-titan-900 via-titan-800 to-titan-900">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-titan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
+            <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-card border border-titan-500/40 text-xs font-semibold uppercase tracking-widest text-titan-300">
+                <i class="fa-solid fa-fire text-titan-400"></i> Forge Your Body & Mind
+            </div>
+            
+            <h1 class="brand-font text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-wider leading-tight text-white">
+                Pain is temporary. <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-titan-400 via-purple-400 to-titan-300 neon-text-glow">Glory is forever.</span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-gray-400 text-base sm:text-lg font-light leading-relaxed">
+                Step into the ultimate arena of iron and grit. Pitch-black focus, uncompromising discipline, and professional guidance engineered to transform your limits.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#plans" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-titan-600 to-titan-500 hover:from-titan-500 hover:to-titan-400 text-white font-bold uppercase tracking-wider text-sm neon-glow transition-all transform hover:-translate-y-1">
+                    Choose Your Plan <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#quotes" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card hover:bg-titan-700/50 text-gray-200 font-bold uppercase tracking-wider text-sm border border-titan-500/30 transition-all">
+                    Read Discipline Wall
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12 max-w-4xl mx-auto">
+                <div class="glass-card p-5 rounded-2xl border border-titan-500/20 text-center">
+                    <div class="brand-font text-3xl font-black text-titan-300">24/7</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Hardcore Access</div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl border border-titan-500/20 text-center">
+                    <div class="brand-font text-3xl font-black text-titan-300">100%</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Pro Equipment</div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl border border-titan-500/20 text-center">
+                    <div class="brand-font text-3xl font-black text-titan-300">500+</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Active Titans</div>
+                </div>
+                <div class="glass-card p-5 rounded-2xl border border-titan-500/20 text-center">
+                    <div class="brand-font text-3xl font-black text-titan-300">4.9★</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest mt-1">Gym Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans Section -->
+    <section id="plans" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-16">
+            <span class="text-titan-400 uppercase tracking-widest text-xs font-bold px-3 py-1 rounded-md bg-titan-500/10 border border-titan-500/20">Investment in Yourself</span>
+            <h2 class="brand-font text-3xl sm:text-5xl font-extrabold uppercase text-white">Membership Plans</h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">Select your duration. Enter your login details and pay securely via Razorpay or UPI.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Plan 1 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-titan-500/20 relative group hover:border-titan-500 transition-all">
+                <div>
+                    <h3 class="brand-font text-lg font-bold uppercase text-white mb-2">One Day Pass</h3>
+                    <p class="text-xs text-gray-400 mb-6">Test your limits for a single intense session.</p>
+                    <div class="mb-6">
+                        <span class="brand-font text-4xl font-black text-white">₹199</span>
+                        <span class="text-xs text-gray-400"> / session</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Full Gym Floor Access</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Locker & Shower Facility</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Free Energy Drink</li>
+                        <li class="text-gray-600 flex items-center"><i class="fa-solid fa-xmark mr-2.5"></i> Personal Coach Consultation</li>
+                    </ul>
+                </div>
+                <button onclick="openCheckout('One Day Pass', 199)" class="w-full py-3 rounded-xl bg-titan-700 hover:bg-titan-600 text-white font-bold text-xs uppercase tracking-wider transition-all border border-titan-500/40">
+                    Buy Day Pass
+                </button>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-titan-500/20 relative group hover:border-titan-500 transition-all">
+                <div>
+                    <h3 class="brand-font text-lg font-bold uppercase text-white mb-2">Weekly Plan</h3>
+                    <p class="text-xs text-gray-400 mb-6">Kickstart a disciplined 7-day training block.</p>
+                    <div class="mb-6">
+                        <span class="brand-font text-4xl font-black text-white">₹899</span>
+                        <span class="text-xs text-gray-400"> / week</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> 7 Days Unlimited Access</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Basic Workout Routine</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Locker & Steam Bath</li>
+                        <li class="text-gray-600 flex items-center"><i class="fa-solid fa-xmark mr-2.5"></i> 1-on-1 Personal Trainer</li>
+                    </ul>
+                </div>
+                <button onclick="openCheckout('Weekly Plan', 899)" class="w-full py-3 rounded-xl bg-titan-700 hover:bg-titan-600 text-white font-bold text-xs uppercase tracking-wider transition-all border border-titan-500/40">
+                    Select Weekly
+                </button>
+            </div>
+
+            <!-- Plan 3 (Featured) -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-2 border-titan-500 relative group neon-glow transform md:-translate-y-2">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-titan-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">
+                    Most Popular
+                </div>
+                <div>
+                    <h3 class="brand-font text-lg font-bold uppercase text-white mb-2">Monthly Plan</h3>
+                    <p class="text-xs text-gray-400 mb-6">Build consistent habits and sustainable muscle.</p>
+                    <div class="mb-6">
+                        <span class="brand-font text-4xl font-black text-white">₹2,499</span>
+                        <span class="text-xs text-gray-400"> / month</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Full 30 Days Access</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Custom Workout Split</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Free Body Composition Analysis</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Locker, Steam & Shower</li>
+                    </ul>
+                </div>
+                <button onclick="openCheckout('Monthly Plan', 2499)" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-titan-600 to-titan-500 hover:from-titan-500 hover:to-titan-400 text-white font-bold text-xs uppercase tracking-wider transition-all neon-glow">
+                    Join Monthly
+                </button>
+            </div>
+
+            <!-- Plan 4 -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-titan-500/20 relative group hover:border-titan-500 transition-all">
+                <div class="absolute -top-3 right-4 bg-emerald-600 text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full">
+                    Save 33%
+                </div>
+                <div>
+                    <h3 class="brand-font text-lg font-bold uppercase text-white mb-2">Yearly Plan</h3>
+                    <p class="text-xs text-gray-400 mb-6">Commit to the ultimate transformation journey.</p>
+                    <div class="mb-6">
+                        <span class="brand-font text-4xl font-black text-white">₹19,999</span>
+                        <span class="text-xs text-gray-400"> / year</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> 365 Days VIP Access</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Dedicated Personal Trainer</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Free Titan Shaker & Merch</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-titan-400 mr-2.5"></i> Guest Passes Included</li>
+                    </ul>
+                </div>
+                <button onclick="openCheckout('Yearly Plan', 19999)" class="w-full py-3 rounded-xl bg-titan-700 hover:bg-titan-600 text-white font-bold text-xs uppercase tracking-wider transition-all border border-titan-500/40">
+                    Go Yearly VIP
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discipline & Quotes Wall Section -->
+    <section id="quotes" class="py-24 bg-titan-800/50 border-y border-titan-500/20 px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-5xl mx-auto text-center space-y-12">
+            <div>
+                <span class="text-titan-400 uppercase tracking-widest text-xs font-bold px-3 py-1 rounded-md bg-titan-500/10 border border-titan-500/20">Mindset Arsenal</span>
+                <h2 class="brand-font text-3xl sm:text-5xl font-extrabold uppercase text-white mt-3">Discipline & Workout Quotes</h2>
+                <p class="text-gray-400 mt-2 text-sm">Fuel your brain before you fuel your muscles.</p>
+            </div>
+
+            <div class="glass-card p-8 sm:p-12 rounded-3xl border border-titan-500/30 relative max-w-3xl mx-auto shadow-2xl">
+                <i class="fa-solid fa-quote-left text-titan-500/30 text-6xl absolute top-4 left-6"></i>
+                <p id="quote-text" class="brand-font text-lg sm:text-2xl font-bold text-white tracking-wide relative z-10 leading-relaxed mb-6">
+                    "Discipline is choosing between what you want now and what you want most."
+                </p>
+                <div id="quote-author" class="text-titan-300 font-semibold text-xs sm:text-sm uppercase tracking-widest">
+                    — TITAN PHILOSOPHY
+                </div>
+                <div class="mt-8 pt-6 border-t border-titan-500/20 flex justify-center">
+                    <button onclick="generateRandomQuote()" class="px-6 py-2.5 rounded-xl bg-titan-600 hover:bg-titan-500 text-white font-bold text-xs uppercase tracking-wider transition-all flex items-center space-x-2 neon-glow">
+                        <i class="fa-solid fa-rotate"></i> <span>Next Quote</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+                <div class="glass-card p-6 rounded-2xl text-left border border-titan-500/20">
+                    <i class="fa-solid fa-bolt text-titan-400 mb-3 text-lg"></i>
+                    <h4 class="brand-font text-sm font-bold text-white mb-2">NO EXCUSES</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">"The body achieves what the mind believes. If you are tired of starting over, stop giving up."</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-left border border-titan-500/20">
+                    <i class="fa-solid fa-dumbbell text-titan-400 mb-3 text-lg"></i>
+                    <h4 class="brand-font text-sm font-bold text-white mb-2">HEAVY IRON</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">"Habit is what keeps you going when motivation quits. Lift heavy, stay humble, conquer daily."</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-left border border-titan-500/20">
+                    <i class="fa-solid fa-shield text-titan-400 mb-3 text-lg"></i>
+                    <h4 class="brand-font text-sm font-bold text-white mb-2">UNCOMPROMISING</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">"Success isn't given. It's earned in the dark, early mornings and late nights when nobody is watching."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Master Trainers Section -->
+    <section id="trainers" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-16">
+            <span class="text-titan-400 uppercase tracking-widest text-xs font-bold px-3 py-1 rounded-md bg-titan-500/10 border border-titan-500/20">Elite Guidance</span>
+            <h2 class="brand-font text-3xl sm:text-5xl font-extrabold uppercase text-white">Master Trainers</h2>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm">Certified beasts with years of battle-tested experience ready to push your boundaries.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card rounded-2xl p-6 border border-titan-500/20 flex flex-col items-center text-center group hover:border-titan-500 transition-all">
+                <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-titan-700 to-titan-500 flex items-center justify-center mb-6 neon-glow group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-user-ninja text-white text-4xl"></i>
+                </div>
+                <h3 class="brand-font text-lg font-bold text-white mb-1">Alex "Iron" Thorne</h3>
+                <p class="text-xs text-titan-300 font-semibold mb-4 uppercase tracking-wider">Head of Strength & Conditioning</p>
+                <p class="text-xs text-gray-400 mb-6 leading-relaxed">Specializes in powerlifting, compound movements, and raw functional strength development.</p>
+                <div class="flex items-center space-x-3 w-full">
+                    <span class="flex-1 text-[11px] text-gray-500 bg-titan-900 py-1.5 rounded-lg border border-titan-500/20">8+ Years Exp</span>
+                    <span class="flex-1 text-[11px] text-gray-500 bg-titan-900 py-1.5 rounded-lg border border-titan-500/20">CSCS Certified</span>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 border border-titan-500/20 flex flex-col items-center text-center group hover:border-titan-500 transition-all">
+                <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-titan-700 to-titan-500 flex items-center justify-center mb-6 neon-glow group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-user-astronaut text-white text-4xl"></i>
+                </div>
+                <h3 class="brand-font text-lg font-bold text-white mb-1">Marcus "Viper" Vance</h3>
+                <p class="text-xs text-titan-300 font-semibold mb-4 uppercase tracking-wider">Hypertrophy & Shred Specialist</p>
+                <p class="text-xs text-gray-400 mb-6 leading-relaxed">Expert in advanced bodybuilding splits, body recomposition, and high-intensity interval training.</p>
+                <div class="flex items-center space-x-3 w-full">
+                    <span class="flex-1 text-[11px] text-gray-500 bg-titan-900 py-1.5 rounded-lg border border-titan-500/20">6+ Years Exp</span>
+                    <span class="flex-1 text-[11px] text-gray-500 bg-titan-900 py-1.5 rounded-lg border border-titan-500/20">Pro Physique</span>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 border border-titan-500/20 flex flex-col items-center text-center group hover:border-titan-500 transition-all">
+                <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-titan-700 to-titan-500 flex items-center justify-center mb-6 neon-glow group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-user-shield text-white text-4xl"></i>
+                </div>
+                <h3 class="brand-font text-lg font-bold text-white mb-1">Elena "Apex" Rostova</h3>
+                <p class="text-xs text-titan-300 font-semibold mb-4 uppercase tracking-wider">Agility & Athletic Coach</p>
+                <p class="text-xs text-gray-400 mb-6 leading-relaxed">Focuses on core stability, mobility, athletic endurance, and injury prevention mechanics.</p>
+                <div class="flex items-center space-x-3 w-full">
+                    <span class="flex-1 text-[11px] text-gray-500 bg-titan-900 py-1.5 rounded-lg border border-titan-500/20">7+ Years Exp</span>
+                    <span class="flex-1 text-[11px] text-gray-500 bg-titan-900 py-1.5 rounded-lg border border-titan-500/20">Sports Science</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-24 bg-titan-800/40 border-t border-titan-500/20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <span class="text-titan-400 uppercase tracking-widest text-xs font-bold px-3 py-1 rounded-md bg-titan-500/10 border border-titan-500/20">Get In Touch</span>
+                <h2 class="brand-font text-3xl sm:text-4xl font-extrabold uppercase text-white">Visit The Arena</h2>
+                <p class="text-gray-400 text-sm leading-relaxed">Ready to begin your journey? Drop by our facility for a free guided tour or reach out to our team directly.</p>
+
+                <div class="space-y-4 pt-4 text-sm">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-titan-700/50 flex items-center justify-center border border-titan-500/30 text-titan-400 shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">Location</div>
+                            <div class="text-gray-400 text-xs mt-0.5">Titan Arena, Iron Street, Fitness District, Tamil Nadu</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-titan-700/50 flex items-center justify-center border border-titan-500/30 text-titan-400 shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">Direct Line</div>
+                            <div class="text-gray-400 text-xs mt-0.5">+91 98765 43210 / +91 44 2345 6789</div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-xl bg-titan-700/50 flex items-center justify-center border border-titan-500/30 text-titan-400 shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">Email Support</div>
+                            <div class="text-gray-400 text-xs mt-0.5">support@titanfitgym.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-3xl border border-titan-500/30">
+                <h3 class="brand-font text-lg font-bold text-white mb-6 uppercase">Send a Message</h3>
+                <form onsubmit="handleContact(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Your Name</label>
+                        <input type="text" required class="w-full bg-titan-900 border border-titan-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-titan-400" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Phone Number</label>
+                        <input type="tel" required class="w-full bg-titan-900 border border-titan-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-titan-400" placeholder="+91 9876543210">
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-gray-400 mb-2">Message or Inquiry</label>
+                        <textarea rows="3" required class="w-full bg-titan-900 border border-titan-500/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-titan-400" placeholder="I want to know about personal coaching..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-titan-500 hover:bg-titan-400 text-white font-bold text-xs uppercase tracking-wider transition-all neon-glow">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-titan-900 py-12 border-t border-titan-500/20 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <div class="flex items-center justify-center space-x-2">
+                <div class="w-6 h-6 rounded-lg bg-titan-600 flex items-center justify-center">
+                    <i class="fa-solid fa-dumbbell text-white text-xs"></i>
+                </div>
+                <span class="brand-font text-sm font-black text-white tracking-widest">TITAN<span class="text-titan-400">FIT</span></span>
+            </div>
+            <p>© 2026 TITANFIT Gym & Discipline Club. All rights reserved. Razorpay & UPI Secure Payment Enabled.</p>
+        </div>
+    </footer>
+
+    <!-- RAZORPAY / UPI CHECKOUT MODAL WITH LOGIN DETAILS -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden px-4 py-6 overflow-y-auto">
+        <div class="glass-card max-w-md w-full rounded-3xl border border-titan-500 p-6 sm:p-8 relative shadow-2xl space-y-5 my-auto">
+            <button onclick="closeCheckout()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div>
+                <span class="text-titan-400 text-[10px] font-bold uppercase tracking-widest bg-titan-500/10 px-2.5 py-1 rounded border border-titan-500/30">Secure Gateway & Registration</span>
+                <h3 id="modal-plan-title" class="brand-font text-xl font-bold text-white mt-2 uppercase">Membership Plan</h3>
+                <div class="flex items-baseline space-x-2 mt-1">
+                    <span id="modal-plan-price" class="brand-font text-3xl font-black text-white">₹0</span>
+                    <span class="text-xs text-gray-400">(Inclusive of all taxes)</span>
+                </div>
+            </div>
+
+            <!-- Login Details Input Form Fields -->
+            <div class="space-y-3 bg-titan-900/60 p-4 rounded-2xl border border-titan-500/20">
+                <span class="block text-xs uppercase tracking-wider text-titan-300 font-bold mb-2"><i class="fa-solid fa-user-lock mr-1"></i> Account & Login Details</span>
+                <div>
+                    <label class="block text-[11px] uppercase tracking-wider text-gray-400 mb-1">Full Name</label>
+                    <input type="text" id="user-name" placeholder="Enter your full name" class="w-full bg-titan-900 border border-titan-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-titan-400">
+                </div>
+                <div>
+                    <label class="block text-[11px] uppercase tracking-wider text-gray-400 mb-1">Email ID</label>
+                    <input type="email" id="user-email" placeholder="yourname@example.com" class="w-full bg-titan-900 border border-titan-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-titan-400">
+                </div>
+                <div>
+                    <label class="block text-[11px] uppercase tracking-wider text-gray-400 mb-1">Contact Number</label>
+                    <input type="tel" id="user-phone" placeholder="+91 9876543210" class="w-full bg-titan-900 border border-titan-500/30 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-titan-400">
+                </div>
+            </div>
+
+            <!-- Promo Code Input -->
+            <div class="flex space-x-2">
+                <input type="text" id="promo-input" placeholder="Promo (TITAN20)" class="flex-1 bg-titan-900 border border-titan-500/30 rounded-xl px-3 py-2 text-xs text-white uppercase focus:outline-none focus:border-titan-400">
+                <button onclick="applyPromo()" class="px-4 py-2 bg-titan-700 hover:bg-titan-600 text-white font-bold text-xs rounded-xl border border-titan-500/30">Apply</button>
+            </div>
+            <div id="promo-msg" class="text-xs text-emerald-400 hidden"></div>
+
+            <!-- Payment Options -->
+            <div class="space-y-2">
+                <label class="block text-xs uppercase tracking-wider text-gray-400">Select Payment Method</label>
+                <div class="space-y-2 text-xs">
+                    <div class="glass-card p-2.5 rounded-xl border border-titan-500/30 flex items-center justify-between cursor-pointer">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-brands fa-google-pay text-xl text-purple-400"></i>
+                            <span class="font-semibold text-white">Google Pay / PhonePe / Paytm UPI</span>
+                        </div>
+                        <input type="radio" name="pay-method" checked class="accent-titan-500">
+                    </div>
+                    <div class="glass-card p-2.5 rounded-xl border border-titan-500/30 flex items-center justify-between cursor-pointer">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-qrcode text-lg text-purple-400"></i>
+                            <span class="font-semibold text-white">Scan Dynamic QR Code</span>
+                        </div>
+                        <input type="radio" name="pay-method" class="accent-titan-500">
+                    </div>
+                    <div class="glass-card p-2.5 rounded-xl border border-titan-500/30 flex items-center justify-between cursor-pointer">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-credit-card text-lg text-purple-400"></i>
+                            <span class="font-semibold text-white">Credit / Debit Card (Razorpay)</span>
+                        </div>
+                        <input type="radio" name="pay-method" class="accent-titan-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pay Button -->
+            <button onclick="processPayment()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-titan-600 to-titan-500 hover:from-titan-500 hover:to-titan-400 text-white font-bold text-xs uppercase tracking-wider neon-glow">
+                Complete Registration & Pay
+            </button>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden px-4">
+        <div class="glass-card max-w-sm w-full rounded-3xl border border-titan-500 p-8 text-center space-y-4">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 text-3xl flex items-center justify-center mx-auto border border-emerald-500/40">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="brand-font text-xl font-bold text-white uppercase">Account Activated!</h3>
+            <p id="success-msg" class="text-xs text-gray-300">Welcome to TitanFit. Your login credentials and receipt have been sent to your email.</p>
+            <button onclick="closeSuccess()" class="w-full py-3 bg-titan-600 hover:bg-titan-500 text-white font-bold text-xs uppercase rounded-xl">Got It</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Engine -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const quotes = [
+            { quote: "Discipline is choosing between what you want now and what you want most.", author: "— TITAN PHILOSOPHY" },
+            { quote: "The body achieves what the mind believes.", author: "— NAPOLEON HILL" },
+            { quote: "Pain is weakness leaving the body.", author: "— USMC MOTTO" },
+            { quote: "If you want something you've never had, you must be willing to do something you've never done.", author: "— THOMAS JEFFERSON" },
+            { quote: "Success starts with self-discipline.", author: "— DWAYNE JOHNSON" },
+            { quote: "There are no shortcuts. Every rep is a deposit in your strength bank.", author: "— TITAN COACH" }
+        ];
+
+        function generateRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote-text').innerText = `"${quotes[randomIndex].quote}"`;
+            document.getElementById('quote-author').innerText = quotes[randomIndex].author;
+        }
+
+        let currentPlanName = '';
+        let currentPlanBasePrice = 0;
+        let finalPayableAmount = 0;
+        let discountApplied = false;
+
+        function openCheckout(planName, price) {
+            currentPlanName = planName;
+            currentPlanBasePrice = price;
+            finalPayableAmount = price;
+            discountApplied = false;
+
+            document.getElementById('modal-plan-title').innerText = planName;
+            document.getElementById('modal-plan-price').innerText = `₹${price.toLocaleString('en-IN')}`;
+            document.getElementById('promo-input').value = '';
+            document.getElementById('promo-msg').classList.add('hidden');
+            
+            // Reset form fields
+            document.getElementById('user-name').value = '';
+            document.getElementById('user-email').value = '';
+            document.getElementById('user-phone').value = '';
+
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function applyPromo() {
+            const code = document.getElementById('promo-input').value.trim().toUpperCase();
+            const msgEl = document.getElementById('promo-msg');
+            
+            if (code === 'TITAN20') {
+                if (!discountApplied) {
+                    finalPayableAmount = Math.round(currentPlanBasePrice * 0.8);
+                    discountApplied = true;
+                    document.getElementById('modal-plan-price').innerText = `₹${finalPayableAmount.toLocaleString('en-IN')}`;
+                    msgEl.innerText = "Success! 20% Discount applied via code TITAN20.";
+                    msgEl.classList.remove('hidden');
+                } else {
+                    msgEl.innerText = "Promo code already applied.";
+                    msgEl.classList.remove('hidden');
+                }
+            } else {
+                msgEl.innerText = "Invalid promo code. Try TITAN20";
+                msgEl.classList.remove('hidden');
+                msgEl.style.color = "#F87171";
+            }
+        }
+
+        function processPayment() {
+            const name = document.getElementById('user-name').value.trim();
+            const email = document.getElementById('user-email').value.trim();
+            const phone = document.getElementById('user-phone').value.trim();
+
+            if (!name || !email || !phone) {
+                alert("Please fill in your Name, Email ID, and Contact Number for login and membership registration.");
+                return;
+            }
+
+            closeCheckout();
+            document.getElementById('success-msg').innerText = `Account created for ${name} (${email}). Payment of ₹${finalPayableAmount.toLocaleString('en-IN')} for ${currentPlanName} successful via UPI/Razorpay!`;
+            document.getElementById('success-modal').classList.remove('hidden');
+        }
+
+        function closeSuccess() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        function handleContact(e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been sent to TitanFit. Our manager will call you shortly.");
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
